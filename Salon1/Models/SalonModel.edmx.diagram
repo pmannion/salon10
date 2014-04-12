@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7c919fb7c81e48219665ca58e98037e7" Name="Diagram1">
+        <EntityTypeShape EntityType="SalonModel.Booking" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalonModel.Contact" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalonModel.Customer" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalonModel.Notifier" Width="1.5" PointX="8.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalonModel.Role" Width="1.5" PointX="1.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalonModel.Staff" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalonModel.Status" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalonModel.Treatment" Width="1.5" PointX="6" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalonModel.TreatmentType" Width="1.5" PointX="3.75" PointY="9.625" IsExpanded="true" />
+        <AssociationConnector Association="SalonModel.FK_dbo_Booking_dbo_Customer_FirstName" ManuallyRouted="false" />
+        <AssociationConnector Association="SalonModel.FK_dbo_Booking_dbo_Staff_StaffID" ManuallyRouted="false" />
+        <AssociationConnector Association="SalonModel.FK_dbo_Booking_dbo_Status_Description" ManuallyRouted="false" />
+        <AssociationConnector Association="SalonModel.FK_dbo_Notifier_dbo_Booking_BookingID" ManuallyRouted="false" />
+        <AssociationConnector Association="SalonModel.FK_dbo_Contact_dbo_Customer_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="SalonModel.FK_dbo_Contact_dbo_Staff_StaffID" ManuallyRouted="false" />
+        <AssociationConnector Association="SalonModel.FK_dbo_Notifier_dbo_Customer_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="SalonModel.FK_dbo_Staff_dbo_Role_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="SalonModel.FK_dbo_Treatment_dbo_TreatmentType_Category" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
