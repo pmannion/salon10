@@ -31,4 +31,6 @@ namespace Salon1.Models
         public virtual Status Status { get; set; }
         public virtual ICollection<Notifier> Notifiers { get; set; }
     }
+
+
 }
