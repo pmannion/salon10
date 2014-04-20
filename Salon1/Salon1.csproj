@@ -224,6 +224,11 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\isalon_images\salon1.jpg" />
+    <Content Include="Content\isalon_images\salon2.jpg" />
+    <Content Include="Content\isalon_images\salon3.jpg" />
+    <Content Include="Content\isalon_images\salon4.jpg" />
+    <Content Include="Content\isalon_images\salon5.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -248,6 +253,7 @@
       <DependentUpon>SalonModel.edmx</DependentUpon>
       <LastGenOutput>SalonModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Content\isalon_images\Thumbs.db" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
