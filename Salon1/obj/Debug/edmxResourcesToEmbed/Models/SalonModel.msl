@@ -2,8 +2,8 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="SalonModelStoreContainer" CdmEntityContainer="SalonEntities">
     <EntitySetMapping Name="Bookings">
-      <EntityTypeMapping TypeName="SalonModel.Booking">
-        <MappingFragment StoreEntitySet="Booking">
+      <EntityTypeMapping TypeName="IsTypeOf(SalonModel.Booking)">
+        <MappingFragment StoreEntitySet="Bookings">
           <ScalarProperty Name="BookingID" ColumnName="BookingID" />
           <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
           <ScalarProperty Name="EndTime" ColumnName="EndTime" />
@@ -14,8 +14,8 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Contacts">
-      <EntityTypeMapping TypeName="SalonModel.Contact">
-        <MappingFragment StoreEntitySet="Contact">
+      <EntityTypeMapping TypeName="IsTypeOf(SalonModel.Contact)">
+        <MappingFragment StoreEntitySet="Contacts">
           <ScalarProperty Name="ContactID" ColumnName="ContactID" />
           <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
           <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
@@ -29,8 +29,8 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Customers">
-      <EntityTypeMapping TypeName="SalonModel.Customer">
-        <MappingFragment StoreEntitySet="Customer">
+      <EntityTypeMapping TypeName="IsTypeOf(SalonModel.Customer)">
+        <MappingFragment StoreEntitySet="Customers">
           <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -40,8 +40,8 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Notifiers">
-      <EntityTypeMapping TypeName="SalonModel.Notifier">
-        <MappingFragment StoreEntitySet="Notifier">
+      <EntityTypeMapping TypeName="IsTypeOf(SalonModel.Notifier)">
+        <MappingFragment StoreEntitySet="Notifiers">
           <ScalarProperty Name="NotifierID" ColumnName="NotifierID" />
           <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
           <ScalarProperty Name="BookingID" ColumnName="BookingID" />
@@ -49,16 +49,16 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Roles">
-      <EntityTypeMapping TypeName="SalonModel.Role">
-        <MappingFragment StoreEntitySet="Role">
+      <EntityTypeMapping TypeName="IsTypeOf(SalonModel.Role)">
+        <MappingFragment StoreEntitySet="Roles">
           <ScalarProperty Name="RoleID" ColumnName="RoleID" />
           <ScalarProperty Name="Category" ColumnName="Category" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Staffs">
-      <EntityTypeMapping TypeName="SalonModel.Staff">
-        <MappingFragment StoreEntitySet="Staff">
+      <EntityTypeMapping TypeName="IsTypeOf(SalonModel.Staff)">
+        <MappingFragment StoreEntitySet="Staffs">
           <ScalarProperty Name="StaffID" ColumnName="StaffID" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="Lastname" ColumnName="Lastname" />
@@ -67,7 +67,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Status">
-      <EntityTypeMapping TypeName="SalonModel.Status">
+      <EntityTypeMapping TypeName="IsTypeOf(SalonModel.Status)">
         <MappingFragment StoreEntitySet="Status">
           <ScalarProperty Name="StatusID" ColumnName="StatusID" />
           <ScalarProperty Name="Description" ColumnName="Description" />
@@ -75,8 +75,8 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Treatments">
-      <EntityTypeMapping TypeName="SalonModel.Treatment">
-        <MappingFragment StoreEntitySet="Treatment">
+      <EntityTypeMapping TypeName="IsTypeOf(SalonModel.Treatment)">
+        <MappingFragment StoreEntitySet="Treatments">
           <ScalarProperty Name="TreatmentID" ColumnName="TreatmentID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Cost" ColumnName="Cost" />
@@ -85,8 +85,8 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TreatmentTypes">
-      <EntityTypeMapping TypeName="SalonModel.TreatmentType">
-        <MappingFragment StoreEntitySet="TreatmentType">
+      <EntityTypeMapping TypeName="IsTypeOf(SalonModel.TreatmentType)">
+        <MappingFragment StoreEntitySet="TreatmentTypes">
           <ScalarProperty Name="TreatmentTypeID" ColumnName="TreatmentTypeID" />
           <ScalarProperty Name="Category" ColumnName="Category" />
         </MappingFragment>
