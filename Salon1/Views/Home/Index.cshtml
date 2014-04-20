@@ -16,9 +16,8 @@
             <img src="../Content/isalon_images/salon1.jpg" alt="First slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>Example headline.</h1>
-                    <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                    <h1>ISalon, Manage your business' bookings and staff needs.</h1>
+                    
                 </div>
             </div>
         </div>
@@ -26,9 +25,9 @@
             <img src="../Content/isalon_images/salon2.jpg" alt="Second slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>Another example headline.</h1>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                    <h1>Make an appointment for your favourite service.</h1>
+                    <p>ISalon allows you to make appointments with your favourite artist at a time that is convenient for you!</p>
+                    
                 </div>
             </div>
         </div>
@@ -36,9 +35,8 @@
             <img src="../Content/isalon_images/salon5.jpg" alt="Third slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>One more for good measure.</h1>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                    <h1>For salon owners</h1>
+                    <p>manage your staff needs based on your bookings and make the most of your resouces</p>
                 </div>
             </div>
         </div>
@@ -49,22 +47,23 @@
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Bookings</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Manage your bookings, make reservations and allow your customers to make reservations online, selecting their prefered time and artist at a time that is conveninet for them!
         </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p>@Html.ActionLink("Make a Booking", "Index", "Booking") &raquo;</p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Staff</h2>
+        <p>Manage your staff needs and requirements based on your customer's demands. Allow your customers to book services based on the days their preferred staff member is avaible.</p>
+        <p>@Html.ActionLink("Staff", "Index", "Staff") &raquo;</p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Treatments</h2>
+        <p>Easily manag your treatments, pricing, components and more with a user friendly interface.</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p>@Html.ActionLink("Treatment", "Index", "Treatment") &raquo;</p>
     </div>
 </div>
