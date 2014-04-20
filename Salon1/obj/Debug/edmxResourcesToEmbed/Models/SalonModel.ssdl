@@ -1,4 +1,256 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="SalonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="SalonModelStoreContainer" />
+<Schema Namespace="SalonModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SalonModelStoreContainer">
+    <EntitySet Name="Bookings" EntityType="SalonModel.Store.Bookings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Contacts" EntityType="SalonModel.Store.Contacts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Customers" EntityType="SalonModel.Store.Customers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Notifiers" EntityType="SalonModel.Store.Notifiers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="SalonModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Staffs" EntityType="SalonModel.Store.Staffs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Status" EntityType="SalonModel.Store.Status" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Treatments" EntityType="SalonModel.Store.Treatments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TreatmentTypes" EntityType="SalonModel.Store.TreatmentTypes" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_dbo_Booking_dbo_Customer_FirstName" Association="SalonModel.Store.FK_dbo_Booking_dbo_Customer_FirstName">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Booking" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Booking_dbo_Staff_StaffID" Association="SalonModel.Store.FK_dbo_Booking_dbo_Staff_StaffID">
+      <End Role="Staff" EntitySet="Staffs" />
+      <End Role="Booking" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Booking_dbo_Status_Description" Association="SalonModel.Store.FK_dbo_Booking_dbo_Status_Description">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Booking" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Notifier_dbo_Booking_BookingID" Association="SalonModel.Store.FK_dbo_Notifier_dbo_Booking_BookingID">
+      <End Role="Booking" EntitySet="Bookings" />
+      <End Role="Notifier" EntitySet="Notifiers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Contact_dbo_Customer_CustomerID" Association="SalonModel.Store.FK_dbo_Contact_dbo_Customer_CustomerID">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Contact" EntitySet="Contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Contact_dbo_Staff_StaffID" Association="SalonModel.Store.FK_dbo_Contact_dbo_Staff_StaffID">
+      <End Role="Staff" EntitySet="Staffs" />
+      <End Role="Contact" EntitySet="Contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Notifier_dbo_Customer_CustomerID" Association="SalonModel.Store.FK_dbo_Notifier_dbo_Customer_CustomerID">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Notifier" EntitySet="Notifiers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Staff_dbo_Role_Category" Association="SalonModel.Store.FK_dbo_Staff_dbo_Role_Category">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="Staff" EntitySet="Staffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Treatment_dbo_TreatmentType_Category" Association="SalonModel.Store.FK_dbo_Treatment_dbo_TreatmentType_Category">
+      <End Role="TreatmentType" EntitySet="TreatmentTypes" />
+      <End Role="Treatment" EntitySet="Treatments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Bookings">
+    <Key>
+      <PropertyRef Name="BookingID" />
+    </Key>
+    <Property Name="BookingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TimeStart" Type="datetime" Nullable="true" />
+    <Property Name="EndTime" Type="datetime" Nullable="true" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="StaffID" Type="int" Nullable="false" />
+    <Property Name="StatusID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contacts">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AddressLine1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AddressLine2" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Town" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="CustomerID" Type="int" Nullable="true" />
+    <Property Name="StaffID" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Gender" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="DOB" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Notifiers">
+    <Key>
+      <PropertyRef Name="NotifierID" />
+    </Key>
+    <Property Name="NotifierID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="BookingID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Staffs">
+    <Key>
+      <PropertyRef Name="StaffID" />
+    </Key>
+    <Property Name="StaffID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Lastname" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="RoleID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Treatments">
+    <Key>
+      <PropertyRef Name="TreatmentID" />
+    </Key>
+    <Property Name="TreatmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Cost" Type="decimal" Nullable="true" Precision="3" Scale="2" />
+    <Property Name="TreatmentTypeID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TreatmentTypes">
+    <Key>
+      <PropertyRef Name="TreatmentTypeID" />
+    </Key>
+    <Property Name="TreatmentTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_dbo_Booking_dbo_Customer_FirstName">
+    <End Role="Customer" Type="SalonModel.Store.Customers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Booking" Type="SalonModel.Store.Bookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Booking_dbo_Staff_StaffID">
+    <End Role="Staff" Type="SalonModel.Store.Staffs" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Booking" Type="SalonModel.Store.Bookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="StaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Booking_dbo_Status_Description">
+    <End Role="Status" Type="SalonModel.Store.Status" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Booking" Type="SalonModel.Store.Bookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Notifier_dbo_Booking_BookingID">
+    <End Role="Booking" Type="SalonModel.Store.Bookings" Multiplicity="1" />
+    <End Role="Notifier" Type="SalonModel.Store.Notifiers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Booking">
+        <PropertyRef Name="BookingID" />
+      </Principal>
+      <Dependent Role="Notifier">
+        <PropertyRef Name="BookingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Contact_dbo_Customer_CustomerID">
+    <End Role="Customer" Type="SalonModel.Store.Customers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Contact" Type="SalonModel.Store.Contacts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Contact_dbo_Staff_StaffID">
+    <End Role="Staff" Type="SalonModel.Store.Staffs" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Contact" Type="SalonModel.Store.Contacts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="StaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Notifier_dbo_Customer_CustomerID">
+    <End Role="Customer" Type="SalonModel.Store.Customers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Notifier" Type="SalonModel.Store.Notifiers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Notifier">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Staff_dbo_Role_Category">
+    <End Role="Role" Type="SalonModel.Store.Roles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Staff" Type="SalonModel.Store.Staffs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Treatment_dbo_TreatmentType_Category">
+    <End Role="TreatmentType" Type="SalonModel.Store.TreatmentTypes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Treatment" Type="SalonModel.Store.Treatments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TreatmentType">
+        <PropertyRef Name="TreatmentTypeID" />
+      </Principal>
+      <Dependent Role="Treatment">
+        <PropertyRef Name="TreatmentTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

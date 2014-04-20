@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/16/2014 18:30:43
--- Generated from EDMX file: C:\Users\Sanjeev\Desktop\Enterprise\Salon1\Models\SalonModel.edmx
+-- Date Created: 04/20/2014 13:48:39
+-- Generated from EDMX file: C:\Users\j\Documents\salon\Salon1\Models\SalonModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,11 +17,65 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_dbo_Booking_dbo_Customer_FirstName]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Bookings] DROP CONSTRAINT [FK_dbo_Booking_dbo_Customer_FirstName];
+GO
+IF OBJECT_ID(N'[dbo].[FK_dbo_Booking_dbo_Staff_StaffID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Bookings] DROP CONSTRAINT [FK_dbo_Booking_dbo_Staff_StaffID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_dbo_Booking_dbo_Status_Description]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Bookings] DROP CONSTRAINT [FK_dbo_Booking_dbo_Status_Description];
+GO
+IF OBJECT_ID(N'[dbo].[FK_dbo_Notifier_dbo_Booking_BookingID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Notifiers] DROP CONSTRAINT [FK_dbo_Notifier_dbo_Booking_BookingID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_dbo_Contact_dbo_Customer_CustomerID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Contacts] DROP CONSTRAINT [FK_dbo_Contact_dbo_Customer_CustomerID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_dbo_Contact_dbo_Staff_StaffID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Contacts] DROP CONSTRAINT [FK_dbo_Contact_dbo_Staff_StaffID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_dbo_Notifier_dbo_Customer_CustomerID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Notifiers] DROP CONSTRAINT [FK_dbo_Notifier_dbo_Customer_CustomerID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_dbo_Staff_dbo_Role_Category]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Staffs] DROP CONSTRAINT [FK_dbo_Staff_dbo_Role_Category];
+GO
+IF OBJECT_ID(N'[dbo].[FK_dbo_Treatment_dbo_TreatmentType_Category]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Treatments] DROP CONSTRAINT [FK_dbo_Treatment_dbo_TreatmentType_Category];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Bookings]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Bookings];
+GO
+IF OBJECT_ID(N'[dbo].[Contacts]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Contacts];
+GO
+IF OBJECT_ID(N'[dbo].[Customers]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Customers];
+GO
+IF OBJECT_ID(N'[dbo].[Notifiers]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Notifiers];
+GO
+IF OBJECT_ID(N'[dbo].[Roles]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Roles];
+GO
+IF OBJECT_ID(N'[dbo].[Staffs]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Staffs];
+GO
+IF OBJECT_ID(N'[dbo].[Status]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Status];
+GO
+IF OBJECT_ID(N'[dbo].[Treatments]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Treatments];
+GO
+IF OBJECT_ID(N'[dbo].[TreatmentTypes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TreatmentTypes];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
