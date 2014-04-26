@@ -4,14 +4,14 @@
     <EntitySetMapping Name="Bookings">
       <EntityTypeMapping TypeName="IsTypeOf(SalonModel.Booking)">
         <MappingFragment StoreEntitySet="Bookings">
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="TreatmentID" ColumnName="TreatmentID" />
           <ScalarProperty Name="BookingID" ColumnName="BookingID" />
           <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
           <ScalarProperty Name="EndTime" ColumnName="EndTime" />
           <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
           <ScalarProperty Name="StaffID" ColumnName="StaffID" />
           <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="TreatmentID" ColumnName="TreatmentID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
