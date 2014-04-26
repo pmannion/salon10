@@ -162,6 +162,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
+    <Compile Include="Controllers\BookingNewCustController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -336,6 +337,11 @@
     <Content Include="Views\Booking\Details.cshtml" />
     <Content Include="Views\Booking\Edit.cshtml" />
     <Content Include="Views\Booking\Index.cshtml" />
+    <Content Include="Views\BookingNewCust\Create.cshtml" />
+    <Content Include="Views\BookingNewCust\Delete.cshtml" />
+    <Content Include="Views\BookingNewCust\Details.cshtml" />
+    <Content Include="Views\BookingNewCust\Edit.cshtml" />
+    <Content Include="Views\BookingNewCust\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

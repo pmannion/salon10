@@ -10,18 +10,18 @@ using Salon1.Models;
 
 namespace Salon1.Controllers
 {
-    public class BookingController : Controller
+    public class BookingNewCustController : Controller
     {
         private SalonEntities db = new SalonEntities();
 
-        // GET: /Booking/
+        // GET: /BookingNewCust/
         public ActionResult Index()
         {
             var bookings = db.Bookings.Include(b => b.Customer).Include(b => b.Staff).Include(b => b.Status);
             return View(bookings.ToList());
         }
 
-        // GET: /Booking/Details/5
+        // GET: /BookingNewCust/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,7 +36,7 @@ namespace Salon1.Controllers
             return View(booking);
         }
 
-        // GET: /Booking/Create
+        // GET: /BookingNewCust/Create
         public ActionResult Create()
         {
             ViewBag.CustomerID = new SelectList(db.Customers, "CustomerID", "LastName");
@@ -46,34 +46,29 @@ namespace Salon1.Controllers
             return View();
         }
 
-        // POST: /Booking/Create
+        // POST: /BookingNewCust/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BookingID,TimeStart,EndTime,CustomerID,LastName,FirstName,Gender,DOB,StaffID,StatusID,TreatmentId")] Customer customer, Booking booking)
+        public ActionResult Create([Bind(Include = "BookingID,TimeStart,EndTime,CustomerID,LastName,FirstName,Gender,DOB,StaffID,StatusID,TreatmentID,Date")] Booking booking, Customer customer)
         {
             if (ModelState.IsValid)
             {
-                db.Customers.Add(customer);
-                db.SaveChanges();
                 db.Bookings.Add(booking);
+                //db.SaveChanges();
+                db.Customers.Add(customer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //return View(customer);
-        {
+
             ViewBag.CustomerID = new SelectList(db.Customers, "CustomerID", "LastName", booking.CustomerID);
             ViewBag.StaffID = new SelectList(db.Staffs, "StaffID", "FirstName", booking.StaffID);
             ViewBag.StatusID = new SelectList(db.Status, "StatusID", "Description", booking.StatusID);
             return View(booking);
         }
-    }
 
-
-
-
-        // GET: /Booking/Edit/5
+        // GET: /BookingNewCust/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -91,12 +86,12 @@ namespace Salon1.Controllers
             return View(booking);
         }
 
-        // POST: /Booking/Edit/5
+        // POST: /BookingNewCust/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BookingID,TimeStart,EndTime,CustomerID,StaffID,StatusID")] Booking booking)
+        public ActionResult Edit([Bind(Include="BookingID,TimeStart,EndTime,CustomerID,StaffID,StatusID,TreatmentID,Date")] Booking booking)
         {
             if (ModelState.IsValid)
             {
@@ -110,7 +105,7 @@ namespace Salon1.Controllers
             return View(booking);
         }
 
-        // GET: /Booking/Delete/5
+        // GET: /BookingNewCust/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -125,7 +120,7 @@ namespace Salon1.Controllers
             return View(booking);
         }
 
-        // POST: /Booking/Delete/5
+        // POST: /BookingNewCust/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
