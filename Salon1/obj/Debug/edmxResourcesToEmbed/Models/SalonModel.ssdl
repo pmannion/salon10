@@ -73,7 +73,7 @@
     </Key>
     <Property Name="TreatmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
-    <Property Name="Cost" Type="decimal" Precision="3" Scale="2" />
+    <Property Name="Cost" Type="decimal" Precision="5" Scale="2" Nullable="false" />
     <Property Name="TreatmentTypeID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="TreatmentTypes">
