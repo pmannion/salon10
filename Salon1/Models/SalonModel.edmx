@@ -16,6 +16,7 @@
           <Property Name="StaffID" Type="int" Nullable="false" />
           <Property Name="StatusID" Type="int" Nullable="false" />
           <Property Name="TreatmentID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" />
         </EntityType>
         <EntityType Name="Contacts">
           <Key>
@@ -278,6 +279,7 @@
           <NavigationProperty Name="Status" Relationship="Self.FK_dbo_Booking_dbo_Status_Description" FromRole="Booking" ToRole="Status" />
           <NavigationProperty Name="Notifiers" Relationship="Self.FK_dbo_Notifier_dbo_Booking_BookingID" FromRole="Booking" ToRole="Notifier" />
           <Property Name="TreatmentID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Contact">
           <Key>
@@ -544,7 +546,8 @@
     <EntitySetMapping Name="Bookings">
       <EntityTypeMapping TypeName="IsTypeOf(SalonModel.Booking)">
         <MappingFragment StoreEntitySet="Bookings">
-          <ScalarProperty Name="TreatmentID" ColumnName="TreatmentID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="TreatmentID" ColumnName="TreatmentID" />
                 <ScalarProperty Name="BookingID" ColumnName="BookingID" />
           <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
           <ScalarProperty Name="EndTime" ColumnName="EndTime" />

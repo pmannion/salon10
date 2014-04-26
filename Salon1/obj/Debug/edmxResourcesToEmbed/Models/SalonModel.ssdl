@@ -11,6 +11,7 @@
     <Property Name="StaffID" Type="int" Nullable="false" />
     <Property Name="StatusID" Type="int" Nullable="false" />
     <Property Name="TreatmentID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" />
   </EntityType>
   <EntityType Name="Contacts">
     <Key>

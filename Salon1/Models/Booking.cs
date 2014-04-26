@@ -26,6 +26,7 @@ namespace Salon1.Models
         public int StaffID { get; set; }
         public int StatusID { get; set; }
         public int TreatmentID { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual Staff Staff { get; set; }

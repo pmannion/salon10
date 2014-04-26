@@ -15,6 +15,7 @@
     <NavigationProperty Name="Status" Relationship="Self.FK_dbo_Booking_dbo_Status_Description" FromRole="Booking" ToRole="Status" />
     <NavigationProperty Name="Notifiers" Relationship="Self.FK_dbo_Notifier_dbo_Booking_BookingID" FromRole="Booking" ToRole="Notifier" />
     <Property Name="TreatmentID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="Contact">
     <Key>
