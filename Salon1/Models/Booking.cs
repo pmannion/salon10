@@ -25,6 +25,7 @@ namespace Salon1.Models
         public int CustomerID { get; set; }
         public int StaffID { get; set; }
         public int StatusID { get; set; }
+        public int TreatmentID { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual Staff Staff { get; set; }

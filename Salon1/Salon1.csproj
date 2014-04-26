@@ -291,11 +291,6 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Booking\Create.cshtml" />
-    <Content Include="Views\Booking\Delete.cshtml" />
-    <Content Include="Views\Booking\Details.cshtml" />
-    <Content Include="Views\Booking\Edit.cshtml" />
-    <Content Include="Views\Booking\Index.cshtml" />
     <Content Include="Views\Customer\Create.cshtml" />
     <Content Include="Views\Customer\Delete.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
@@ -336,6 +331,11 @@
     <Content Include="Views\Notifier\Details.cshtml" />
     <Content Include="Views\Notifier\Edit.cshtml" />
     <Content Include="Views\Notifier\Index.cshtml" />
+    <Content Include="Views\Booking\Create.cshtml" />
+    <Content Include="Views\Booking\Delete.cshtml" />
+    <Content Include="Views\Booking\Details.cshtml" />
+    <Content Include="Views\Booking\Edit.cshtml" />
+    <Content Include="Views\Booking\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

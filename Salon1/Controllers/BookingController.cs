@@ -50,29 +50,20 @@ namespace Salon1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-
-
-        public ActionResult Create([Bind(Include = "CustomerID,LastName,FirstName,Gender,DOB,BookingID,TimeStart,EndTime,StaffID,StatusID")] Customer customer, Booking booking)
+        public ActionResult Create([Bind(Include="BookingID,TimeStart,EndTime,CustomerID,StaffID,StatusID,TreatmentID")] Booking booking)
         {
             if (ModelState.IsValid)
             {
-                db.Customers.Add(customer);
-                db.SaveChanges();
                 db.Bookings.Add(booking);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //return View(customer);
-        {
+
             ViewBag.CustomerID = new SelectList(db.Customers, "CustomerID", "LastName", booking.CustomerID);
             ViewBag.StaffID = new SelectList(db.Staffs, "StaffID", "FirstName", booking.StaffID);
             ViewBag.StatusID = new SelectList(db.Status, "StatusID", "Description", booking.StatusID);
             return View(booking);
         }
-    }
-
-
-
 
         // GET: /Booking/Edit/5
         public ActionResult Edit(int? id)
@@ -97,7 +88,7 @@ namespace Salon1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BookingID,TimeStart,EndTime,CustomerID,StaffID,StatusID")] Booking booking)
+        public ActionResult Edit([Bind(Include="BookingID,TimeStart,EndTime,CustomerID,StaffID,StatusID,TreatmentID")] Booking booking)
         {
             if (ModelState.IsValid)
             {

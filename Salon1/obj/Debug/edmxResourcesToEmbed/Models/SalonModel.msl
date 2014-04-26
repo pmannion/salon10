@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Bookings">
       <EntityTypeMapping TypeName="IsTypeOf(SalonModel.Booking)">
         <MappingFragment StoreEntitySet="Bookings">
+          <ScalarProperty Name="TreatmentID" ColumnName="TreatmentID" />
           <ScalarProperty Name="BookingID" ColumnName="BookingID" />
           <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
           <ScalarProperty Name="EndTime" ColumnName="EndTime" />
