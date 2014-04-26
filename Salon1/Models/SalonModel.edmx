@@ -16,6 +16,7 @@
           <Property Name="StaffID" Type="int" Nullable="false" />
           <Property Name="StatusID" Type="int" Nullable="false" />
           <Property Name="TreatmentID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" />
         </EntityType>
         <EntityType Name="Contacts">
           <Key>
@@ -78,7 +79,7 @@
           </Key>
           <Property Name="TreatmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
-          <Property Name="Cost" Type="decimal" Precision="3" Scale="2" />
+          <Property Name="Cost" Type="decimal" Precision="5" Scale="2" Nullable="false" />
           <Property Name="TreatmentTypeID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="TreatmentTypes">
@@ -278,6 +279,7 @@
           <NavigationProperty Name="Status" Relationship="Self.FK_dbo_Booking_dbo_Status_Description" FromRole="Booking" ToRole="Status" />
           <NavigationProperty Name="Notifiers" Relationship="Self.FK_dbo_Notifier_dbo_Booking_BookingID" FromRole="Booking" ToRole="Notifier" />
           <Property Name="TreatmentID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Contact">
           <Key>
@@ -352,7 +354,7 @@
           </Key>
           <Property Name="TreatmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Cost" Type="Decimal" Precision="3" Scale="2" />
+          <Property Name="Cost" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
           <Property Name="TreatmentTypeID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="TreatmentType" Relationship="Self.FK_dbo_Treatment_dbo_TreatmentType_Category" FromRole="Treatment" ToRole="TreatmentType" />
         </EntityType>
@@ -544,7 +546,8 @@
     <EntitySetMapping Name="Bookings">
       <EntityTypeMapping TypeName="IsTypeOf(SalonModel.Booking)">
         <MappingFragment StoreEntitySet="Bookings">
-          <ScalarProperty Name="TreatmentID" ColumnName="TreatmentID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="TreatmentID" ColumnName="TreatmentID" />
                 <ScalarProperty Name="BookingID" ColumnName="BookingID" />
           <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
           <ScalarProperty Name="EndTime" ColumnName="EndTime" />

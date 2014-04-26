@@ -17,7 +17,7 @@
         @Html.ValidationSummary(true)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TimeStart, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TimeStart, "Start Date/Time ", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TimeStart)
                 @Html.ValidationMessageFor(model => model.TimeStart)
@@ -25,15 +25,17 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.EndTime, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.EndTime, "End Date/Time", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.EndTime)
                 @Html.ValidationMessageFor(model => model.EndTime)
             </div>
         </div>
 
+        
+
         <div class="form-group">
-            @Html.LabelFor(model => model.CustomerID, "CustomerID", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CustomerID, "Customer Name", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("CustomerID", String.Empty)
                 @Html.ValidationMessageFor(model => model.CustomerID)
@@ -41,7 +43,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.StaffID, "StaffID", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.StaffID, "Staff Name", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("StaffID", String.Empty)
                 @Html.ValidationMessageFor(model => model.StaffID)
@@ -49,7 +51,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.StatusID, "StatusID", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.StatusID, "Status", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("StatusID", String.Empty)
                 @Html.ValidationMessageFor(model => model.StatusID)
@@ -57,9 +59,9 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TreatmentID, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TreatmentID, "Treatment Name", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TreatmentID)
+                @Html.DropDownList("TreatmentID", String.Empty)
                 @Html.ValidationMessageFor(model => model.TreatmentID)
             </div>
         </div>
