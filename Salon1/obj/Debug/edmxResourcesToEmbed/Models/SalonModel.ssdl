@@ -57,6 +57,8 @@
     <Property Name="CustomerID" Type="int" Nullable="false" />
     <Property Name="StaffID" Type="int" Nullable="false" />
     <Property Name="StatusID" Type="int" Nullable="false" />
+    <Property Name="TreatmentID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
   </EntityType>
   <EntityType Name="Contacts">
     <Key>
@@ -119,7 +121,7 @@
     </Key>
     <Property Name="TreatmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="Cost" Type="decimal" Nullable="true" Precision="3" Scale="2" />
+    <Property Name="Cost" Type="decimal" Nullable="false" Precision="5" Scale="2" />
     <Property Name="TreatmentTypeID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="TreatmentTypes">

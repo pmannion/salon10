@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/20/2014 19:41:13
--- Generated from EDMX file: C:\Users\Ger\Source\Repos\salon\Salon1\Models\SalonModel.edmx
+-- Date Created: 04/26/2014 20:41:58
+-- Generated from EDMX file: C:\Users\Ger\Source\Repos\salon7\Salon1\Models\SalonModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -26,14 +26,14 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_dbo_Booking_dbo_Status_Description]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Bookings] DROP CONSTRAINT [FK_dbo_Booking_dbo_Status_Description];
 GO
-IF OBJECT_ID(N'[dbo].[FK_dbo_Notifier_dbo_Booking_BookingID]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Notifiers] DROP CONSTRAINT [FK_dbo_Notifier_dbo_Booking_BookingID];
-GO
 IF OBJECT_ID(N'[dbo].[FK_dbo_Contact_dbo_Customer_CustomerID]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Contacts] DROP CONSTRAINT [FK_dbo_Contact_dbo_Customer_CustomerID];
 GO
 IF OBJECT_ID(N'[dbo].[FK_dbo_Contact_dbo_Staff_StaffID]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Contacts] DROP CONSTRAINT [FK_dbo_Contact_dbo_Staff_StaffID];
+GO
+IF OBJECT_ID(N'[dbo].[FK_dbo_Notifier_dbo_Booking_BookingID]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Notifiers] DROP CONSTRAINT [FK_dbo_Notifier_dbo_Booking_BookingID];
 GO
 IF OBJECT_ID(N'[dbo].[FK_dbo_Notifier_dbo_Customer_CustomerID]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Notifiers] DROP CONSTRAINT [FK_dbo_Notifier_dbo_Customer_CustomerID];
@@ -88,7 +88,9 @@ CREATE TABLE [dbo].[Bookings] (
     [EndTime] datetime  NULL,
     [CustomerID] int  NOT NULL,
     [StaffID] int  NOT NULL,
-    [StatusID] int  NOT NULL
+    [StatusID] int  NOT NULL,
+    [TreatmentID] int  NOT NULL,
+    [Date] datetime  NULL
 );
 GO
 
@@ -151,7 +153,7 @@ GO
 CREATE TABLE [dbo].[Treatments] (
     [TreatmentID] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(50)  NULL,
-    [Cost] decimal(3,2)  NULL,
+    [Cost] decimal(5,2)  NOT NULL,
     [TreatmentTypeID] int  NOT NULL
 );
 GO

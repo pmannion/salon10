@@ -16,7 +16,7 @@ namespace Salon1.Models
     {
         public int TreatmentID { get; set; }
         public string Name { get; set; }
-        public Nullable<decimal> Cost { get; set; }
+        public decimal Cost { get; set; }
         public int TreatmentTypeID { get; set; }
     
         public virtual TreatmentType TreatmentType { get; set; }

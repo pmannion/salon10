@@ -14,6 +14,8 @@
     <NavigationProperty Name="Staff" Relationship="Self.FK_dbo_Booking_dbo_Staff_StaffID" FromRole="Booking" ToRole="Staff" />
     <NavigationProperty Name="Status" Relationship="Self.FK_dbo_Booking_dbo_Status_Description" FromRole="Booking" ToRole="Status" />
     <NavigationProperty Name="Notifiers" Relationship="Self.FK_dbo_Notifier_dbo_Booking_BookingID" FromRole="Booking" ToRole="Notifier" />
+    <Property Name="TreatmentID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="Contact">
     <Key>
@@ -39,7 +41,7 @@
     <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="DOB" Type="DateTime" Precision="0" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Bookings" Relationship="Self.FK_dbo_Booking_dbo_Customer_FirstName" FromRole="Customer" ToRole="Booking" />
     <NavigationProperty Name="Contacts" Relationship="Self.FK_dbo_Contact_dbo_Customer_CustomerID" FromRole="Customer" ToRole="Contact" />
     <NavigationProperty Name="Notifiers" Relationship="Self.FK_dbo_Notifier_dbo_Customer_CustomerID" FromRole="Customer" ToRole="Notifier" />
@@ -88,7 +90,7 @@
     </Key>
     <Property Name="TreatmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Cost" Type="Decimal" Precision="3" Scale="2" />
+    <Property Name="Cost" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
     <Property Name="TreatmentTypeID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="TreatmentType" Relationship="Self.FK_dbo_Treatment_dbo_TreatmentType_Category" FromRole="Treatment" ToRole="TreatmentType" />
   </EntityType>
