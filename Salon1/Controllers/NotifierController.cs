@@ -15,6 +15,7 @@ namespace Salon1.Controllers
         private SalonEntities db = new SalonEntities();
 
         // GET: /Notifier/
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var notifiers = db.Notifiers.Include(n => n.Booking).Include(n => n.Customer);

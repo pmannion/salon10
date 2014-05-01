@@ -15,6 +15,7 @@ namespace Salon1.Controllers
         private SalonEntities db = new SalonEntities();
 
         // GET: /Status/
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View(db.Status.ToList());
