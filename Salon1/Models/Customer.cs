@@ -26,6 +26,10 @@ namespace Salon1.Models
         public string FirstName { get; set; }
         public string Gender { get; set; }
         public Nullable<System.DateTime> DOB { get; set; }
+        public string Phone { get; set; }
+        public string email { get; set; }
+        public string AddressLine1 { get; set; }
+        public string AddressLine2 { get; set; }
     
         public virtual ICollection<Booking> Bookings { get; set; }
         public virtual ICollection<Contact> Contacts { get; set; }
