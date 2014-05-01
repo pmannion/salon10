@@ -15,6 +15,7 @@ namespace Salon1.Controllers
         private SalonEntities db = new SalonEntities();
 
         // GET: /Treatment/
+        [Authorize(Roles="Admin")]
         public ActionResult Index()
         {
             var treatments = db.Treatments.Include(t => t.TreatmentType);
