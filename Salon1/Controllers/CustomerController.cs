@@ -15,6 +15,7 @@ namespace Salon1.Controllers
         private SalonEntities db = new SalonEntities();
 
         // GET: /Customer/
+
         public ActionResult Index()
         {
             return View(db.Customers.ToList());
@@ -46,7 +47,7 @@ namespace Salon1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="CustomerID,LastName,FirstName,Gender,DOB")] Customer customer)
+        public ActionResult Create([Bind(Include="CustomerID,LastName,FirstName,Gender,DOB,Phone,email,AddressLine1,AddressLine2")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +79,7 @@ namespace Salon1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="CustomerID,LastName,FirstName,Gender,DOB")] Customer customer)
+        public ActionResult Edit([Bind(Include = "CustomerID,LastName,FirstName,Gender,DOB,Phone,email,AddressLine1,AddressLine2")] Customer customer)
         {
             if (ModelState.IsValid)
             {
