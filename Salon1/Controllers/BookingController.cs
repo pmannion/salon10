@@ -51,7 +51,7 @@ namespace Salon1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BookingID,TimeStart,EndTime,CustomerID,LastName,FirstName,Gender,DOB,StaffID,StatusID,TreatmentId")] Customer customer, Booking booking)
+        public ActionResult Create([Bind(Include = "BookingID,TimeStart,EndTime,CustomerID,LastName,FirstName,Gender,DOB,Phone,email,AddressLine1,AddressLine2,StaffID,StatusID,TreatmentId")] Customer customer, Booking booking)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace Salon1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BookingID,TimeStart,EndTime,CustomerID,StaffID,StatusID")] Booking booking)
+        public ActionResult Edit([Bind(Include = "BookingID,TimeStart,EndTime,CustomerID,LastName,FirstName,Gender,DOB,Phone,email,AddressLine1,AddressLine2,StaffID,StatusID,TreatmentId")] Booking booking)
         {
             if (ModelState.IsValid)
             {
