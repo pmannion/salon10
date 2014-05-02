@@ -15,7 +15,7 @@ namespace Salon1.Controllers
         private SalonEntities db = new SalonEntities();
 
         // GET: /Contact/
-        [AllowAnonymous]
+       // [AllowAnonymous]
         public ActionResult Index()
         {
             var contacts = db.Contacts.Include(c => c.Customer).Include(c => c.Staff);
