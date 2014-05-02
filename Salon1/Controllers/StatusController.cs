@@ -17,7 +17,7 @@ namespace Salon1.Controllers
         // GET: /Status/
         //below commented to enable admin access on prod
         //[Authorize(Roles = "Admin")]
-        [AllowAnonymous]
+       // [AllowAnonymous]
         public ActionResult Index()
         {
             return View(db.Status.ToList());

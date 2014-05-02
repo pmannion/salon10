@@ -15,7 +15,7 @@ namespace Salon1.Controllers
         private SalonEntities db = new SalonEntities();
 
         // GET: /Customer/
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ActionResult Index()
         {
             return View(db.Customers.ToList());

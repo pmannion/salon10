@@ -17,7 +17,7 @@ namespace Salon1.Controllers
         // GET: /Staff/
         //below commented to allow access on prod
         //[Authorize(Roles = "Admin")]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ActionResult Index()
         {
             var staffs = db.Staffs.Include(s => s.Role);

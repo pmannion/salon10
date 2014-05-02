@@ -17,7 +17,7 @@ namespace Salon1.Controllers
         // GET: /Notifier/
         //below commented to enable admin access on prod
        // [Authorize(Roles = "Admin")]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ActionResult Index()
         {
             var notifiers = db.Notifiers.Include(n => n.Booking).Include(n => n.Customer);

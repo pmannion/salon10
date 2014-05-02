@@ -8,7 +8,7 @@ namespace Salon1.Controllers
 {
     public class HomeController : Controller
     {
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ActionResult Index()
         {
             return View();

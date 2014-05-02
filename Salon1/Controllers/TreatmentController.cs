@@ -17,7 +17,7 @@ namespace Salon1.Controllers
         // GET: /Treatment/
         //below commented to enable admin access on prod
         //[Authorize(Roles="Admin")]
-        [AllowAnonymous]
+       // [AllowAnonymous]
         public ActionResult Index()
         {
             var treatments = db.Treatments.Include(t => t.TreatmentType);
