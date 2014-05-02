@@ -15,7 +15,9 @@ namespace Salon1.Controllers
         private SalonEntities db = new SalonEntities();
 
         // GET: /Role/
-        [Authorize(Roles = "Admin")]
+        //below commented to enable admin access on prod
+       // [Authorize(Roles = "Admin")]
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(db.Roles.ToList());
