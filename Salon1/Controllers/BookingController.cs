@@ -18,7 +18,9 @@ namespace Salon1.Controllers
         public ActionResult Index()
         {
             var bookings = db.Bookings.Include(b => b.Customer).Include(b => b.Staff).Include(b => b.Status);
+            //var sorted = bookings.OrderBy(order => order.Customer.LastName); 
             return View(bookings.ToList());
+            
         }
 
         // GET: /Booking/Details/5
