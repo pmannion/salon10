@@ -228,6 +228,7 @@
     <Content Include="Content\isalon_images\salon1.jpg" />
     <Content Include="Content\isalon_images\salon2.jpg" />
     <Content Include="Content\isalon_images\salon5.jpg" />
+    <Content Include="Content\isalon_images\salon3.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
