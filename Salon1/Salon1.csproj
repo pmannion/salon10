@@ -254,6 +254,7 @@
       <LastGenOutput>SalonModel.cs</LastGenOutput>
     </Content>
     <Content Include="Content\isalon_images\Thumbs.db" />
+    <None Include="Properties\PublishProfiles\salon10.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
